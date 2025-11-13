@@ -1,11 +1,12 @@
 <x-layout>
-    <div class="flex flex-col gap-3 max-w-2xs justify-center">
+    <form action="{{route('contacts.search')}}" class="flex flex-col gap-3 max-w-2xs justify-center">
+        @csrf
         <label for="contact">Contact Name</label>
         <input type="text"
                name="contact"
                class="px-2 py-1 rounded-2xl border"
                placeholder="Search for a contact" />
-    </div>
+    </form>
     <div class="grid grid-cols-5">
         @foreach($contacts as $contact)
             <div class="flex flex-col gap-2">
